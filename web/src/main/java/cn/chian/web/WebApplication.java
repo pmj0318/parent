@@ -55,6 +55,7 @@ public class WebApplication {
     }
 
 
+
     @RequestMapping(value="/insert",produces = "application/json;charset=UTF-8")
     public  int insert(HttpServletResponse  res){
         res.setHeader("Access-Control-Allow-Origin", "*");//service2-解决ajax跨域问题
