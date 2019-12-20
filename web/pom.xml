@@ -49,13 +49,6 @@
             <artifactId>service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <!--就是 会自己导入-->
-        <dependency>
-            <groupId>cn.China</groupId>
-            <artifactId>dao</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
 
 
         <!--就是启动的问题,当你不知道是什么启动方式,就是使用这个方式启动-->

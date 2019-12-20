@@ -42,9 +42,6 @@
           <element id="archive" name="service-0.0.1-SNAPSHOT.jar">
             <element id="module-output" name="service" />
           </element>
-          <element id="archive" name="dao-0.0.1-SNAPSHOT.jar">
-            <element id="module-output" name="dao" />
-          </element>
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-thymeleaf:1.5.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf-spring4:2.1.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf:2.1.5.RELEASE" />

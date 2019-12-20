@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 @Configuration//(service2)就是要是使用负载均衡(告诉他)加入的时候
 @RestController//一般就是当做原先controller控制层使用,只不过这里分成了web模块了
 @EnableDiscoveryClient//启用(使什么能够)发现的客户端,(就是让注册中心发线他)--就是客户端发布服务,并向注册中心注册服务了,然后就是让这个服务能够让用户发现-就使用使用访问这个服务,就是用户访问这个web8082--直接注册中心8080-然后访问服务8081,//就是进本配置这个就要配置注册中心的application.yml.
-//@SpringBootApplication ,暂时不用数据可以用不找,就是用数据才用
+//@SpringBootApplication //,暂时不用配置数据可以用不找,就是用配置采用数据库才用
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 public class WebApplication {
 
@@ -53,6 +53,23 @@ public class WebApplication {
     public IRule ribbonRule(){
         return  new RandomRule();
     }
+
+
+    @RequestMapping(value="/insert",produces = "application/json;charset=UTF-8")
+    public  int insert(HttpServletResponse  res){
+        res.setHeader("Access-Control-Allow-Origin", "*");//service2-解决ajax跨域问题
+        //3.就是动态获取服务器的地址
+        ServiceInstance serviceInstance = loadBalancerClient.choose("provider");
+
+          int line =   rest.getForObject("http://provider/insert",Integer.class);
+          return line;
+    }
+
+
+
+
+
+
 
     @RequestMapping(value="/getInfo",produces = "application/json;charset=UTF-8")
 public Student myGet(HttpServletResponse  res){//这个也技术HttpServletResponse  res 就是也就是使用跨域问题,

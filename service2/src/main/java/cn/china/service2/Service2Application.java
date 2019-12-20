@@ -1,6 +1,7 @@
 package cn.china.service2;
 
 import entity.Student;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,10 +16,10 @@ import service.StudentService;
 @RestController//就是在service掉用给别人一个入口,不认别人也办法使用这个服务
 
 @EnableEurekaClient //让他注册服务,告诉service层可以向注册中心注册服务,不注册中心,注册用户获取不到
-//@SpringBootApplication //就是不用数据库,就是用自己的就要下面的配置
-@SpringBootApplication(exclude={DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
+@SpringBootApplication //就是不用数据库,就是用自己的就要下面的配置
+//@SpringBootApplication(exclude={DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 @ComponentScan("service")
-//@MapperScan("mapper")
+@MapperScan("mapper") //就是导入maper下面的借口
 
 public class Service2Application {
 

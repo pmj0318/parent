@@ -12,7 +12,6 @@
     <!--就是要指定儿子-->
     <modules>
 
-        <module>dao</module>
         <module>service</module>
         <module>service2</module>
         <module>eurekaregisty</module>

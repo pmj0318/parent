@@ -16,10 +16,11 @@ import service.StudentService;
 @RestController//就是在service掉用给别人一个入口,不认别人也办法使用这个服务
 
 @EnableEurekaClient //启用Eureka可以客户端,让他注册服务,告诉service层可以向注册中心注册服务,不注册中心汇报,注册中心没有记录,用户访问的时候是回去不到这个服务
-//@SpringBootApplication //就是不用数据库,就是用自己的就要下面的配置
-@SpringBootApplication(exclude={DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
+
+@SpringBootApplication //就是不用数据库,就是用自己的就要下面的配置
+//@SpringBootApplication(exclude={DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 @ComponentScan("service")//@ComponentScan 的作用就是根据定义的扫描路径，把符合扫描规则的类装配到spring容器中
-//@MapperScan("mapper")// 解释:@MapperScan 配置一个或多个包路径，自动的扫描这些包路径下的类，自动的为它们生成代理类。//@MapperScan 扫描包路径下的类,@Mapper 一般用在接口上
+@MapperScan("mapper")// 解释:@MapperScan 配置一个或多个包路径(接口)，自动的扫描这些包路径下的类，自动的为它们生成代理类。//@MapperScan 扫描包路径下的类,@Mapper 一般用在接口上
 public class ServiceApplication {
 
     @Autowired
