@@ -1,17 +1,17 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="web:war exploded">
-    <output-path>$PROJECT_DIR$/web/target/web-0.0.1-SNAPSHOT</output-path>
+  <artifact type="exploded-war" name="service2:war exploded">
+    <output-path>$PROJECT_DIR$/service2/target/service2-0.0.1-SNAPSHOT</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
-        <module>web</module>
+        <module>service2</module>
         <packaging>war</packaging>
       </options>
     </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="web" />
+          <element id="module-output" name="service2" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:1.5.3.RELEASE" />
@@ -39,9 +39,6 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.8.RELEASE" />
-          <element id="archive" name="service-0.0.1-SNAPSHOT.jar">
-            <element id="module-output" name="service" />
-          </element>
           <element id="archive" name="dao-0.0.1-SNAPSHOT.jar">
             <element id="module-output" name="dao" />
           </element>
@@ -152,9 +149,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/web/target/web-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/service2/target/service2-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="web/web/Web" />
+      <element id="javaee-facet-resources" facet="service2/web/Web" />
     </root>
   </artifact>
 </component>
